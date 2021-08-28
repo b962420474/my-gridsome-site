@@ -6,5 +6,12 @@ import DefaultLayout from '~/layouts/Default.vue'
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
+  Vue.mixin({
+    data(){
+      return {
+        GRIDSOME_API:process.env.GRIDSOME_API
+      }
+    }
+  })
   Vue.component('Layout', DefaultLayout)
 }
